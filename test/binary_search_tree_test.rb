@@ -79,4 +79,28 @@ class BinarySearchTreeTest < MiniTest::Test
     assert_equal 1, tree.depth_of(91)
     assert_equal 2, tree.depth_of(10)
   end
+
+  def test_it_can_find_the_max_rating
+    skip
+    tree = BinarySearchTree.new
+
+    tree.insert(88, "Big Hero 6")
+    tree.insert(65, "Interstellar")
+    tree.insert(91, "The Dark Knight")
+    tree.insert(10, "Master of Disguise")
+
+    assert_equal 91, tree.max
+  end
+
+  def test_it_can_find_the_min_rating
+    skip
+    tree = BinarySearchTree.new
+
+    tree.insert(88, "Big Hero 6")
+    tree.insert(65, "Interstellar")
+    tree.insert(91, "The Dark Knight")
+    tree.insert(10, "Master of Disguise")
+
+    assert_equal 10, tree.min
+  end
 end
