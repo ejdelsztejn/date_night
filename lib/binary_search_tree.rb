@@ -10,7 +10,9 @@ class BinarySearchTree
   def insert(rating, movie_title)
     if root_node.nil?
       @root_node = Node.new(rating, movie_title)
+      @depth = 0
     else
+      @depth = 1
       insert_node(root_node, rating, movie_title)
     end
   end
@@ -19,16 +21,19 @@ class BinarySearchTree
     if rating > node.rating
       if node.right
         insert_node(node.right, rating, movie_title)
+        @depth += 1
       else
         node.right = Node.new(rating, movie_title)
+        @depth
       end
     else
       if node.left
         insert_node(node.left, rating, movie_title)
+        @depth += 1
       else
         node.left = Node.new(rating, movie_title)
+        @depth
       end
     end
   end
-
 end
