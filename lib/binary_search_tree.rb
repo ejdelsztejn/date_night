@@ -71,7 +71,13 @@ class BinarySearchTree
     end
   end
 
-  def max
-    
+  def max(node = root_node)
+    current_max = node.rating
+    if node.right
+      max(node.right)
+    else
+      current_max
+    end
   end
+
 end
