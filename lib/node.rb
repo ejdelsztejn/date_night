@@ -7,6 +7,5 @@ class Node
     @movie_title = movie_title
     @left = nil
     @right = nil
-    @depth = nil
   end
 end
