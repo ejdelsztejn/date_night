@@ -54,4 +54,14 @@ class BinarySearchTreeTest < MiniTest::Test
     assert_equal 1, tree.insert(91, "The Dark Knight")
     assert_equal 2, tree.insert(10, "Master of Disguise")
   end
+
+  def test_it_includes_or_doesnt_include_a_rating
+    tree = BinarySearchTree.new
+
+    tree.insert(88, "Big Hero 6")
+    tree.insert(65, "Interstellar")
+
+    assert tree.include?(88)
+    refute tree.include?(27)
+  end
 end
