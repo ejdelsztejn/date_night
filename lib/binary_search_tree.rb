@@ -55,7 +55,7 @@ class BinarySearchTree
     end
   end
 
-  def depth_of?(rating)
+  def depth_of(rating)
     
   end
 end
