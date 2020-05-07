@@ -45,4 +45,13 @@ class BinarySearchTreeTest < MiniTest::Test
     assert_equal "Interstellar", tree.root_node.left.movie_title
     assert_equal "The Dark Knight", tree.root_node.right.movie_title
   end
+
+  def test_it_returns_depth_when_adding_new_node
+    tree = BinarySearchTree.new
+
+    assert_equal 0, tree.insert(88, "Big Hero 6")
+    assert_equal 1, tree.insert(65, "Interstellar")
+    assert_equal 1, tree.insert(91, "The Dark Knight")
+    assert_equal 2, tree.insert(10, "Master of Disguise")
+  end
 end
