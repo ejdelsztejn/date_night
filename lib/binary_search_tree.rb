@@ -70,4 +70,8 @@ class BinarySearchTree
       depth
     end
   end
+
+  def max
+    
+  end
 end
