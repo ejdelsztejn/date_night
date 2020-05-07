@@ -61,7 +61,10 @@ class BinarySearchTreeTest < MiniTest::Test
     tree.insert(88, "Big Hero 6")
     tree.insert(65, "Interstellar")
 
-    assert tree.include?(88)
-    refute tree.include?(27)
+    assert_equal true, tree.include?(88)
+    assert_equal true, tree.include?(65)
+    assert_equal false, tree.include?(27)
   end
+
+
 end
