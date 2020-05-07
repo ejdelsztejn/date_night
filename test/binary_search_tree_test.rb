@@ -81,26 +81,53 @@ class BinarySearchTreeTest < MiniTest::Test
   end
 
   def test_it_can_find_the_max_rating
-    skip
-    tree = BinarySearchTree.new
+    # skip
+    tree1 = BinarySearchTree.new
 
-    tree.insert(88, "Big Hero 6")
-    tree.insert(65, "Interstellar")
-    tree.insert(91, "The Dark Knight")
-    tree.insert(10, "Master of Disguise")
+    tree1.insert(88, "Big Hero 6")
+    tree1.insert(65, "Interstellar")
+    tree1.insert(91, "The Dark Knight")
+    tree1.insert(10, "Master of Disguise")
 
-    assert_equal 91, tree.max
+    assert_equal 91, tree1.max
+
+    tree2 = BinarySearchTree.new
+
+    tree2.insert(88, "Big Hero 6")
+    tree2.insert(65, "Interstellar")
+    tree2.insert(91, "The Dark Knight")
+    tree2.insert(10, "Master of Disguise")
+    tree2.insert(33, "Jumanji")
+    tree2.insert(56, "Book Club")
+    tree2.insert(85, "Insidious")
+    tree2.insert(100, "Legally Blonde")
+
+    assert_equal 100, tree2.max
   end
 
   def test_it_can_find_the_min_rating
-    skip
-    tree = BinarySearchTree.new
+    # skip
+    tree1 = BinarySearchTree.new
 
-    tree.insert(88, "Big Hero 6")
-    tree.insert(65, "Interstellar")
-    tree.insert(91, "The Dark Knight")
-    tree.insert(10, "Master of Disguise")
+    tree1.insert(88, "Big Hero 6")
+    tree1.insert(65, "Interstellar")
+    tree1.insert(91, "The Dark Knight")
+    tree1.insert(10, "Master of Disguise")
 
-    assert_equal 10, tree.min
+    assert_equal 10, tree1.min
+
+    tree2 = BinarySearchTree.new
+
+    tree2.insert(88, "Big Hero 6")
+    tree2.insert(65, "Interstellar")
+    tree2.insert(91, "The Dark Knight")
+    tree2.insert(10, "Master of Disguise")
+    tree2.insert(33, "Jumanji")
+    tree2.insert(56, "Book Club")
+    tree2.insert(85, "Insidious")
+    tree2.insert(100, "Legally Blonde")
+    tree2.insert(7, "Battlefield Earth: A Saga of the Year 3000")
+
+    assert_equal 7, tree2.min
   end
 end
