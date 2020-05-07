@@ -80,4 +80,12 @@ class BinarySearchTree
     end
   end
 
+  def min(node = root_node)
+    current_min = node.rating
+    if node.left
+      min(node.left)
+    else
+      current_min
+    end
+  end
 end
