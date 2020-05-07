@@ -8,6 +8,7 @@ class BinarySearchTree
   end
 
   def insert(rating, movie_title)
+    # still need to prevent addition of non-unique ratings
     if root_node.nil?
       @root_node = Node.new(rating, movie_title)
       0 # node depth
@@ -34,8 +35,27 @@ class BinarySearchTree
     end
   end
 
-  # def include?(rating)
-  #   if root_node.rating == rating
-  #     true
+  def include?(rating)
+    if root_node.rating == rating
+      true
+    else
+      include_node(root_node, rating)
+    end
+  end
 
+  def include_node(node, rating)
+    if node == nil
+      false
+    elsif rating > node.rating
+      include_node(node.right, rating)
+    elsif rating < node.rating
+      include_node(node.left, rating)
+    elsif node.rating == rating
+      true
+    end
+  end
+
+  def depth_of?(rating)
+    
+  end
 end
