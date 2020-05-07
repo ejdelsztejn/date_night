@@ -1,11 +1,12 @@
 class Node
   attr_reader :rating, :movie_title
-  attr_accessor :left, :right
+  attr_accessor :left, :right, :depth
 
   def initialize(rating, movie_title)
     @rating = rating
     @movie_title = movie_title
-    @left = nil;
-    @right = nil;
+    @left = nil
+    @right = nil
+    @depth = nil
   end
 end
