@@ -66,5 +66,17 @@ class BinarySearchTreeTest < MiniTest::Test
     assert_equal false, tree.include?(27)
   end
 
+  def test_it_returns_depth_of_a_node
+    tree = BinarySearchTree.new
 
+    tree.insert(88, "Big Hero 6")
+    tree.insert(65, "Interstellar")
+    tree.insert(91, "The Dark Knight")
+    tree.insert(10, "Master of Disguise")
+
+    assert_equal 0, tree.depth_of(88)
+    assert_equal 1, tree.depth_of(65)
+    assert_equal 1, tree.depth_of(91)
+    assert_equal 2, tree.depth_of(10)
+  end
 end
