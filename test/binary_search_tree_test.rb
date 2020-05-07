@@ -33,4 +33,16 @@ class BinarySearchTreeTest < MiniTest::Test
 
     assert_equal "Interstellar", tree.root_node.left.movie_title
   end
+
+  def test_it_can_add_left_and_right_nodes
+    tree = BinarySearchTree.new
+
+    tree.insert(88, "Big Hero 6")
+    tree.insert(65, "Interstellar")
+    tree.insert(91, "The Dark Knight")
+
+    assert_equal "Big Hero 6", tree.root_node.movie_title
+    assert_equal "Interstellar", tree.root_node.left.movie_title
+    assert_equal "The Dark Knight", tree.root_node.right.movie_title
+  end
 end
