@@ -88,4 +88,20 @@ class BinarySearchTree
       current_min
     end
   end
+
+  def sort(node = root_node, sorted_array = [])
+    sorted_array << Hash[node.movie_title, node.rating]
+    if node.right && node.left
+      sort(node.right, sorted_array)
+      sort(node.left, sorted_array)
+    elsif node.right
+      sort(node.right, sorted_array)
+    elsif node.left
+      sort(node.left, sorted_array)
+    else
+      sorted_array
+    end
+  end
+
+
 end
