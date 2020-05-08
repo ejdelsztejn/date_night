@@ -167,4 +167,15 @@ class BinarySearchTreeTest < MiniTest::Test
     assert_equal [[58, 6, 85]], tree.health(1)
     assert_equal [[36, 2, 28], [93, 3, 42]], tree.health(2)
   end
+
+  def test_it_can_count_the_leaves
+    tree = BinarySearchTree.new
+
+    tree.insert(88, "Big Hero 6")
+    tree.insert(65, "Interstellar")
+    tree.insert(91, "The Dark Knight")
+    tree.insert(10, "Master of Disguise")
+
+    assert_equal 2, tree.leaves
+  end
 end
