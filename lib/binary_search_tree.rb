@@ -1,4 +1,5 @@
 require './lib/node'
+require 'csv'
 
 class BinarySearchTree
   attr_accessor :root_node
@@ -103,5 +104,12 @@ class BinarySearchTree
     end
   end
 
-
+  def load(file)
+    # need to prevent addition of non-unique ratings
+    movies = CSV.read(file)
+    movie_list = movies.map do |movie|
+      insert(movie[0], movie[1].strip)
+    end
+    movie_list.count
+  end
 end
