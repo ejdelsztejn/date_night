@@ -130,4 +130,19 @@ class BinarySearchTreeTest < MiniTest::Test
 
     assert_equal 7, tree2.min
   end
+
+  def test_it_can_sort_the_nodes
+    # skip
+    tree = BinarySearchTree.new
+
+    tree.insert(88, "Big Hero 6")
+    tree.insert(65, "Interstellar")
+    tree.insert(91, "The Dark Knight")
+    tree.insert(10, "Master of Disguise")
+
+    assert_equal [{"Big Hero 6"=>88},
+                  {"The Dark Knight"=>91},
+                  {"Interstellar"=>65},
+                  {"Master of Disguise"=>10},], tree.sort
+  end
 end
