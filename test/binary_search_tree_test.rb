@@ -145,4 +145,12 @@ class BinarySearchTreeTest < MiniTest::Test
                   {"Interstellar"=>65},
                   {"Master of Disguise"=>10},], tree.sort
   end
+
+  def test_it_can_load_movies_text_file
+    tree = BinarySearchTree.new
+
+    file = './lib/movies.txt'
+
+    assert_equal 99, tree.load(file)
+  end
 end
