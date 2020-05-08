@@ -102,6 +102,7 @@ class BinarySearchTree
     else
       sorted_array
     end
+    sorted_array.reverse!
   end
 
   def load(file)
@@ -112,4 +113,30 @@ class BinarySearchTree
     end
     movie_list.count
   end
+
+  # def health(depth, node = root_node)
+    # [node_rating, child_nodes(node), ]
+  # end
+
+  def child_nodes(node = root_node, child_nodes = 1)
+    if node.right && node.left
+      child_nodes(node.right, child_nodes += 1)
+      child_nodes(node.left, child_nodes += 1)
+    elsif node.right
+      child_nodes(node.right, child_nodes += 1)
+    elsif node.left
+      child_nodes(node.left, child_nodes += 1)
+    else
+      child_nodes += 1
+      child_nodes
+    end
+  end
+
+  # def leaves
+
+  # end
+
+  # def height
+
+  # end
 end
