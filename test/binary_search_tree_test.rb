@@ -153,7 +153,7 @@ class BinarySearchTreeTest < MiniTest::Test
   end
 
   def test_it_can_return_the_ratings_at_given_depth
-    skip
+    # skip
     tree = BinarySearchTree.new
 
     tree.insert(98, "Animals United")
@@ -169,6 +169,10 @@ class BinarySearchTreeTest < MiniTest::Test
     assert_equal [93, 36], tree.rating(2)
     assert_equal [86, 38], tree.rating(3)
     assert_equal [69], tree.rating(4)
+  end
+
+  def test_it_can_return_the_number_of_child_nodes
+    skip
   end
 
   def test_it_can_determine_health_of_tree
