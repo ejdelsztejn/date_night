@@ -114,23 +114,28 @@ class BinarySearchTree
     movie_list.count
   end
 
-  # def health(depth, node = root_node)
+  def health(depth, node = root_node)
     # [node_rating, child_nodes(node), ]
-  # end
 
-  def child_nodes(node = root_node, child_nodes = 1)
-    if node.right && node.left
-      child_nodes(node.right, child_nodes += 1)
-      child_nodes(node.left, child_nodes += 1)
-    elsif node.right
-      child_nodes(node.right, child_nodes += 1)
-    elsif node.left
-      child_nodes(node.left, child_nodes += 1)
-    else
-      child_nodes += 1
-      child_nodes
-    end
   end
+
+
+  def rating(depth, node = root_node)
+    
+  end
+  # def child_nodes(node = root_node, child_nodes = 1)
+  #   if node.right && node.left
+  #     child_nodes(node.right, child_nodes += 1)
+  #     child_nodes(node.left, child_nodes += 1)
+  #   elsif node.right
+  #     child_nodes(node.right, child_nodes += 1)
+  #   elsif node.left
+  #     child_nodes(node.left, child_nodes += 1)
+  #   else
+  #     child_nodes += 1
+  #     child_nodes
+  #   end
+  # end
 
   # def leaves
 
