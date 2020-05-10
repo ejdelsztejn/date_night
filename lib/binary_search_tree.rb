@@ -120,8 +120,22 @@ class BinarySearchTree
   end
 
 
-  def rating(depth, node = root_node)
-    
+  def rating(depth, at_depth = 0, node = root_node, nodes_at_depth = [])
+    if at_depth == depth
+      nodes_at_depth << node.rating
+      nodes_at_depth
+    else
+      if node.right && node.left
+        rating(depth, at_depth += 1, node.right, nodes_at_depth)
+        rating(depth, at_depth, node.left, nodes_at_depth)
+      elsif node.right
+        rating(depth, at_depth += 1, node.right, nodes_at_depth)
+      elsif node.left
+        rating(depth, at_depth += 1, node.left, nodes_at_depth)
+      else
+        nodes_at_depth
+      end
+    end
   end
   # def child_nodes(node = root_node, child_nodes = 1)
   #   if node.right && node.left
