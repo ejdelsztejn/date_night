@@ -152,6 +152,25 @@ class BinarySearchTreeTest < MiniTest::Test
     assert_equal 99, tree.load(file)
   end
 
+  def test_it_can_return_the_ratings_at_given_depth
+    skip
+    tree = BinarySearchTree.new
+
+    tree.insert(98, "Animals United")
+    tree.insert(58, "Armageddon")
+    tree.insert(36, "Bill & Ted's Bogus Journey")
+    tree.insert(93, "Bill & Ted's Excellent Adventure")
+    tree.insert(86, "Charlie's Angels")
+    tree.insert(38, "Charlie's Country")
+    tree.insert(69, "Collateral Damage")
+
+    assert_equal [98], tree.rating(0)
+    assert_equal [58], tree.rating(1)
+    assert_equal [93, 36], tree.rating(2)
+    assert_equal [86, 38], tree.rating(3)
+    assert_equal [69], tree.rating(4)
+  end
+
   def test_it_can_determine_health_of_tree
     skip
     tree = BinarySearchTree.new
