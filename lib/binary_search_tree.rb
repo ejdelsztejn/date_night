@@ -115,10 +115,16 @@ class BinarySearchTree
   end
 
   def health(depth, node = root_node)
-    # [node_rating, child_nodes(node), ]
-
+    health_array = []
+    ratings = rating(depth)
+    ratings.each do |node|
+      node_array = []
+      node_array << node
+      node_array << child_nodes
+      health_array << node_array
+    end
+    health_array
   end
-
 
   def rating(depth, at_depth = 0, node = root_node, nodes_at_depth = [])
     if at_depth == depth
@@ -137,20 +143,38 @@ class BinarySearchTree
       end
     end
   end
-  # def child_nodes(node = root_node, child_nodes = 1)
-  #   if node.right && node.left
-  #     child_nodes(node.right, child_nodes += 1)
-  #     child_nodes(node.left, child_nodes += 1)
-  #   elsif node.right
-  #     child_nodes(node.right, child_nodes += 1)
-  #   elsif node.left
-  #     child_nodes(node.left, child_nodes += 1)
-  #   else
-  #     child_nodes += 1
-  #     child_nodes
-  #   end
-  # end
 
+  def child_nodes(node = root_node, children = 1)
+    if node.right && node.left
+      require "pry"; binding.pry
+      child_nodes(node.right, children += 1)
+      child_nodes(node.left, children += 1)
+    elsif node.right
+      require "pry"; binding.pry
+      child_nodes(node.right, children += 1)
+    elsif node.left
+      require "pry"; binding.pry
+      child_nodes(node.left, children += 1)
+    else
+      children += 1
+      require "pry"; binding.pry
+      children
+    end
+  end
+
+  tree2 = BinarySearchTree.new
+
+  tree2.insert(88, "Big Hero 6")
+  tree2.insert(65, "Interstellar")
+  tree2.insert(91, "The Dark Knight")
+  tree2.insert(10, "Master of Disguise")
+  # tree2.insert(33, "Jumanji")
+  # tree2.insert(56, "Book Club")
+  # tree2.insert(85, "Insidious")
+  # tree2.insert(100, "Legally Blonde")
+  # tree2.insert(7, "Battlefield Earth: A Saga of the Year 3000")
+
+  p tree2.child_nodes
   # def leaves
 
   # end

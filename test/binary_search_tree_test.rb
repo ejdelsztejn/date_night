@@ -173,6 +173,7 @@ class BinarySearchTreeTest < MiniTest::Test
 
   def test_it_can_return_the_number_of_child_nodes
     skip
+    
   end
 
   def test_it_can_determine_health_of_tree

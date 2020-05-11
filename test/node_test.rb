@@ -1,6 +1,4 @@
-require 'minitest/autorun'
-require 'minitest/pride'
-require './lib/node'
+require './test/test_helper'
 
 class NodeTest < MiniTest::Test
   def test_it_exists
